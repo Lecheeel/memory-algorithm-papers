@@ -64,18 +64,9 @@
 - `SuperMemo_SM-2算法详解.html` — SuperMemo SM-2 算法详解
 - `SuperMemo_SM-17算法详解.html` — SuperMemo SM-17 算法详解
 
-## 官方解读
-
-墨墨背单词官方对记忆算法的解读：
-
-- `墨墨百科_记忆算法总览.html`
-- `墨墨百科_2021记忆算法研究报告.html`
-- `墨墨百科_KDD2022论文详解.html`
-- `墨墨百科_TKDE2023论文详解.html`
-
 ## 代码仓库（git submodule）
 
-相关算法的开源实现，均以 submodule 形式引用上游仓库：
+相关算法的开源实现：
 
 | 目录 | 上游仓库 | 说明 |
 | --- | --- | --- |
