@@ -1,0 +1,12 @@
+[submodule "代码仓库/fsrs4anki"]
+	path = 代码仓库/fsrs4anki
+	url = https://github.com/open-spaced-repetition/fsrs4anki.git
+[submodule "代码仓库/halflife-regression"]
+	path = 代码仓库/halflife-regression
+	url = https://github.com/duolingo/halflife-regression.git
+[submodule "代码仓库/SSP-MMC"]
+	path = 代码仓库/SSP-MMC
+	url = https://github.com/maimemo/SSP-MMC.git
+[submodule "代码仓库/SSP-MMC-Plus"]
+	path = 代码仓库/SSP-MMC-Plus
+	url = https://github.com/maimemo/SSP-MMC-Plus.git

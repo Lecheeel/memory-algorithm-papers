@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Algorithm SM-19 - supermemo.guru</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )guru_kkmwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"dacf6cebd787efbe37068200","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Algorithm_SM-19","wgTitle":"Algorithm SM-19","wgCurRevisionId":32781,"wgRevisionId":32781,"wgArticleId":741,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Algorithm_SM-19","wgRelevantArticleId":741,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Algorithm_SM-17","wgCiteReferencePreviewsActive":true,"wgInternalRedirectTargetUrl":"/wiki/Algorithm_SM-19"};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready"};RLPAGEMODULES=["mediawiki.action.view.redirect","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=skins.vector.styles.legacy&amp;only=styles&amp;skin=vector">
+<script async="" src="/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.44.0">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<link rel="search" type="application/opensearchdescription+xml" href="/rest.php/v1/search" title="supermemo.guru (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://supermemo.guru/api.php?action=rsd">
+<link rel="canonical" href="https://supermemo.guru/wiki/Algorithm_SM-19">
+<link rel="alternate" type="application/atom+xml" title="supermemo.guru Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Algorithm_SM-19 rootpage-Algorithm_SM-19 skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<div class="mw-indicators">
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Algorithm SM-19</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From supermemo.guru</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><span class="mw-redirectedfrom">(Redirected from <a href="/index.php?title=Algorithm_SM-17&amp;redirect=no" class="mw-redirect" title="Algorithm SM-17">Algorithm SM-17</a>)</span></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><p><small><span style="padding: 3px; background-color: #b4fefc;">This text is part of: "<i><a href="/wiki/History_of_spaced_repetition" title="History of spaced repetition">History of spaced repetition</a></i>" by <a href="/wiki/Piotr_Wozniak" title="Piotr Wozniak">Piotr Wozniak</a> (June 2018)</span></small>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Two_component_model"><span class="tocnumber">2</span> <span class="toctext">Two component model</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Past_vs._Future"><span class="tocnumber">3</span> <span class="toctext">Past vs. Future</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Weaknesses_of_Algorithm_SM-15"><span class="tocnumber">3.1</span> <span class="toctext">Weaknesses of Algorithm SM-15</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Strengths_of_Algorithm_SM-17"><span class="tocnumber">3.2</span> <span class="toctext">Strengths of Algorithm SM-17</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Weaknesses_of_Algorithm_SM-17"><span class="tocnumber">3.3</span> <span class="toctext">Weaknesses of Algorithm SM-17</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Theory"><span class="tocnumber">4</span> <span class="toctext">Theory</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Two_component_memory_model"><span class="tocnumber">4.1</span> <span class="toctext">Two component memory model</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Historical_note:_three_variables_of_memory"><span class="tocnumber">4.2</span> <span class="toctext">Historical note: three variables of memory</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Deviations"><span class="tocnumber">4.3</span> <span class="toctext">Deviations</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#Grade_deviation"><span class="tocnumber">4.3.1</span> <span class="toctext">Grade deviation</span></a>
+<ul>
+<li class="toclevel-4 tocsection-12"><a href="#Theoretical_minimum_to_a_grade_deviation"><span class="tocnumber">4.3.1.1</span> <span class="toctext">Theoretical minimum to a grade deviation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-13"><a href="#Matrix_deviation"><span class="tocnumber">4.3.2</span> <span class="toctext">Matrix deviation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Approximations"><span class="tocnumber">4.4</span> <span class="toctext">Approximations</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Approximation_parameters_in_student_assessment"><span class="tocnumber">4.4.1</span> <span class="toctext">Approximation parameters in student assessment</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#The_Algorithm"><span class="tocnumber">5</span> <span class="toctext">The Algorithm</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Intro"><span class="tocnumber">5.1</span> <span class="toctext">Intro</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Stabilization"><span class="tocnumber">5.1.1</span> <span class="toctext">Stabilization</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Startup_stability_and_startup_interval"><span class="tocnumber">5.1.2</span> <span class="toctext">Startup stability and startup interval</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#Historical_note:_adding_retrievability_dimension"><span class="tocnumber">5.2</span> <span class="toctext">Historical note: adding retrievability dimension</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Item_difficulty"><span class="tocnumber">5.3</span> <span class="toctext">Item difficulty</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Difficulty:_Definition"><span class="tocnumber">5.3.1</span> <span class="toctext">Difficulty: Definition</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Historical_note:_measuring_difficulty"><span class="tocnumber">5.3.2</span> <span class="toctext">Historical note: measuring difficulty</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#Computing_difficulty"><span class="tocnumber">5.3.3</span> <span class="toctext">Computing difficulty</span></a>
+<ul>
+<li class="toclevel-4 tocsection-25"><a href="#Computing_difficulty:_Algorithm_outline"><span class="tocnumber">5.3.3.1</span> <span class="toctext">Computing difficulty: Algorithm outline</span></a></li>
+<li class="toclevel-4 tocsection-26"><a href="#Computing_difficulty:_Simplified_procedure"><span class="tocnumber">5.3.3.2</span> <span class="toctext">Computing difficulty: Simplified procedure</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Startup_interval"><span class="tocnumber">5.4</span> <span class="toctext">Startup interval</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Startup_stability"><span class="tocnumber">5.5</span> <span class="toctext">Startup stability</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Post-lapse_stability"><span class="tocnumber">5.6</span> <span class="toctext">Post-lapse stability</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Retrievability"><span class="tocnumber">5.7</span> <span class="toctext">Retrievability</span></a>
+<ul>
+<li class="toclevel-3 tocsection-31"><a href="#Theoretical_retrievability"><span class="tocnumber">5.7.1</span> <span class="toctext">Theoretical retrievability</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#Three_measures_of_retrievability"><span class="tocnumber">5.7.2</span> <span class="toctext">Three measures of retrievability</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#Retrievability_estimate"><span class="tocnumber">5.7.3</span> <span class="toctext">Retrievability estimate</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-34"><a href="#Stability"><span class="tocnumber">5.8</span> <span class="toctext">Stability</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#Stability_increase"><span class="tocnumber">5.9</span> <span class="toctext">Stability increase</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#Interval"><span class="tocnumber">5.10</span> <span class="toctext">Interval</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#Data"><span class="tocnumber">5.11</span> <span class="toctext">Data</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#The_Algorithm:_Outline"><span class="tocnumber">5.12</span> <span class="toctext">The Algorithm: Outline</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-39"><a href="#Metrics:_First_year_of_testing"><span class="tocnumber">6</span> <span class="toctext">Metrics: First year of testing</span></a></li>
+<li class="toclevel-1 tocsection-40"><a href="#History_of_the_algorithm"><span class="tocnumber">7</span> <span class="toctext">History of the algorithm</span></a></li>
+<li class="toclevel-1 tocsection-41"><a href="#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<div class="mw-heading mw-heading2"><h2 id="Introduction">Introduction</h2></div>
+<p>Algorithms <b>SM-17</b>, <b>SM-18</b>, and <b>SM-19</b> are based on the same framework. This text was originally written to describe <b>Algorithm SM-17</b>. However, it is largely relevant for newer algorithms. This is why changes in <b>SM-18</b> and <b>SM-19</b> will be added here as updates.
+</p><p><b>Algorithm SM-19</b> is a modern version of the <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a> algorithm used in <a href="/wiki/SuperMemo_for_Windows" class="mw-redirect" title="SuperMemo for Windows">SuperMemo for Windows</a>. Version SM-17 was developed, implemented, and tested in the years 2014-2016. Versions SM-18 and SM-19 followed in the years 2017-2026.
+</p><p><a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a> had a fertile impact on the research in modeling long-term memory. One of the most interesting fruits of that research is the <a href="/wiki/Two_component_model_of_memory" title="Two component model of memory">two component model of memory</a>. Over the last three decades, it has been hinted on many occasions that the model may provide a sound theoretical basis for a better and more universal approach to <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a>. <b>Algorithm SM-17</b> is a successful conversion of the theory into a practical application. A different take on the same model can be found in <a href="/wiki/Algorithm_SM-20" title="Algorithm SM-20">Algorithm SM-20</a> where the optimization of model hyperparameters was delegated to machine learning.
+</p><p>Algorithm SM-17 is used in <a href="/wiki/SuperMemo_17" title="SuperMemo 17">SuperMemo 17</a>. Algorithm SM-18 is used in <a href="/wiki/SuperMemo_18" title="SuperMemo 18">SuperMemo 18</a>. Algorithm SM-19 is used in <a href="/wiki/SuperMemo_19" title="SuperMemo 19">SuperMemo 19</a> (along <a href="/wiki/Algorithm_SM-15" title="Algorithm SM-15">Algorithm SM-15</a>), and <a href="/wiki/SuperMemo_20" title="SuperMemo 20">SuperMemo 20</a> (along <a href="/wiki/Algorithm_SM-20" title="Algorithm SM-20">Algorithm SM-20</a>).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Two_component_model">Two component model</h2></div>
+<p>The two component model of long-term memory underlies Algorithm SM-17. The model asserts that two variables are sufficient to describe the status of unitary memory in a healthy human brain:
+</p>
+<ul><li><a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> - this variable determines how long a memory can last if undisturbed and if not retrieved</li>
+<li><a href="/wiki/Retrievability" title="Retrievability">retrievability</a> - this variable determines the probability of retrieving a memory at any given time since the last review/recall</li></ul>
+<p>In the literature on memory, an ill-defined term of <i>memory strength</i> will often stand for either stability (S) or retrievability (R). This results in a great deal of confusion that slows down the progress of memory research. In 1995 (and earlier), we <a class="external text" href="http://www.super-memory.com/english/2vm.htm">have proven</a> theoretically that the two variables: R and S are sufficient to describe the status of memory in <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a>.
+</p><p>Algorithm SM-17 is the ultimate practical proof for the correctness of the <a class="external text" href="http://www.super-memory.com/english/2vm.htm">two component model</a>.
+</p><p>A graph of actual changes in the value of the two components of memory provides a conceptual visualization of the evolving memory status:
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a href="/wiki/File:Memory_status.jpg" class="mw-file-description" title="SuperMemo: Changes in two variables of long-term memory over time"><img alt="SuperMemo: Changes in two variables of long-term memory over time" src="/images/thumb/5/57/Memory_status.jpg/600px-Memory_status.jpg" decoding="async" width="600" height="363" class="mw-file-element" srcset="/images/thumb/5/57/Memory_status.jpg/900px-Memory_status.jpg 1.5x, /images/thumb/5/57/Memory_status.jpg/1200px-Memory_status.jpg 2x" /></a><figcaption>SuperMemo: Changes in two variables of long-term memory over time</figcaption></figure>
+<blockquote><p><i><b>Figure:</b> Changes in memory status over time for an exemplary <a href="/wiki/Piece_of_knowledge" class="mw-redirect" title="Piece of knowledge">piece of knowledge</a>. The horizontal axis represents time spanning the entire <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a>. The top panel shows <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> (tenth power, R<sup>10</sup>, for easier analysis). Retrievability grid in <span style="padding: 3px; color: #fff; background-color: gray;">gray</span> is labelled by R=99%, R=98%, etc. The middle panel displays <a href="/wiki/Optimum_interval" title="Optimum interval">optimum intervals</a> in <span style="padding: 3px; color: #fff; background-color: navy;">navy</span>. Repetition dates are marked by <span style="padding: 3px; color: #fff; background-color: blue;">blue vertical lines</span> and labelled in <span style="padding: 3px; background-color: aqua;">aqua</span>. The end of the <a href="/wiki/Optimum_interval" title="Optimum interval">optimum interval</a> where <a href="/wiki/Retrievability" title="Retrievability">R</a> crosses 90% line is marked by <span style="padding: 3px; color: #fff; background-color: red;">red vertical lines</span> (only if <a href="/wiki/Interval" title="Interval">intervals</a> are longer than <a href="/wiki/Optimum_interval" title="Optimum interval">optimum intervals</a>). The bottom panel visualizes <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> (presented as <code>ln(S)/ln(days)</code> for easier analysis). The graph shows that <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> drops fast (exponentially) after early <a href="/wiki/Repetition" title="Repetition">repetitions</a> when <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> is low, however, it only drops from 100% to 94% in long 10 years after the 7th review. All values are derived from an actual repetition history and the <a href="/wiki/Three_component_model_of_memory" class="mw-redirect" title="Three component model of memory">three component model of memory</a>.</i></p></blockquote>
+<div class="mw-heading mw-heading2"><h2 id="Past_vs._Future">Past vs. Future</h2></div>
+<p>All SuperMemo algorithms before the year 2015 took one essential assumption that limited their universal applicability in learning: the review of the learning material should occur at optimum timing determined by SuperMemo. Algorithms employed in SuperMemo 11 through 16 included weak heuristics that would allow of <b>repetition at any time</b> without a noticeable detriment to learning. In particular, those heuristics would help overcome the impact of the <a href="/wiki/Spacing_effect" title="Spacing effect">spacing effect</a> where frequent reviews lead to less impact or even weakening of memories. New research indicates that the applicability of those heuristics was limited to the less extreme departures from the optimum schedule. The new algorithm, in theory, should make it possible to optimize review for any <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a>, and any repetition timing. It should also make it possible to simulate the status of memory produced with different variants of spaced repetition algorithms (e.g. those used by SuperMemo in remote past).
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Weaknesses_of_Algorithm_SM-15">Weaknesses of Algorithm SM-15</h3></div>
+<p>Here is the list of major weaknesses of <a href="/wiki/Algorithm_SM-15" title="Algorithm SM-15">Algorithm SM-15</a> as revealed by comparisons with Algorithm SM-17:
+</p>
+<ul><li>lack of the <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> dimension in mapping the function of <a href="/wiki/Optimum_interval" title="Optimum interval">optimum intervals</a></li>
+<li>weak <a href="/wiki/Spacing_effect" title="Spacing effect">spacing effect</a> heuristic (e.g. performing poorly in highly massed <a href="/wiki/Repetition" title="Repetition">repetitions</a>)</li>
+<li>memory-less difficulty determination method (new <a href="/wiki/A-Factor" title="A-Factor">A-Factor</a> would be derived from the current <a class="external text" href="https://help.supermemo.org/wiki/Forgetting_index#estimated_forgetting_index">estimated forgetting index</a> and the O-Factor matrix without taking into account past difficulty estimates and <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a>)</li>
+<li>incremental changes to <a href="/wiki/Difficulty" title="Difficulty">item difficulty</a> would produce nice-looking difficulty distributions that would not truly reflect actual item <a href="/wiki/Difficulty" title="Difficulty">difficulty</a></li>
+<li>heterogeneous streams of <a href="/wiki/Item" title="Item">items</a> passed via the optimization matrices resulted in clusters of "polluted" matrix entries</li>
+<li>relying on the best-fit approximation of <a href="/wiki/O-Factor" class="mw-redirect" title="O-Factor">optimum factors</a> would not reflect variations caused by user strategy, or item heterogeneity</li>
+<li>lack of filtering for the power law in heterogeneous <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a>. In particular, the <a href="/wiki/First_forgetting_curve" title="First forgetting curve">first review forgetting curve</a> is better approximated with a power function, which shows only in <a href="/wiki/Collection" title="Collection">collections</a> with substantial first review delay (beyond 100-200 days)</li>
+<li>excess reliance on the weak correlation between <a href="/wiki/Grade" title="Grade">grades</a> and the <a class="external text" href="https://help.supermemo.org/wiki/Forgetting_index#estimated_forgetting_index">estimated forgetting index</a></li>
+<li>weak first grade vs. A-Factor correlation. For a flat correlation only extreme values of <a href="/wiki/A-Factor" title="A-Factor">A-Factor</a> would be used after the first <a href="/wiki/Repetition" title="Repetition">repetition</a>. Such a flat correlation would often develop in well-managed old <a href="/wiki/Collection" title="Collection">collections</a></li>
+<li>relying on the <a href="/wiki/Forgetting_index" title="Forgetting index">forgetting index</a> as the main optimization criterion may be unreliable for heterogeneous learning material where difficulty streams are not well separated</li>
+<li>lack of tools for maximizing the speed of learning for varying levels of the <a href="/wiki/Forgetting_index" title="Forgetting index">forgetting index</a></li>
+<li>lack of tools for maximizing the increase in <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stability</a> for varying levels of the <a href="/wiki/Forgetting_index" title="Forgetting index">forgetting index</a></li>
+<li>first post-lapse <a href="/wiki/Interval" title="Interval">interval</a> would not differentiate between <a href="/wiki/Item" title="Item">items</a> whose forgetting was caused by different degrees of delay (rather than overestimated <a href="/wiki/Difficulty" title="Difficulty">difficulty</a>)</li>
+<li>assuming optimality of the schedule: manual interventions into the length of <a href="/wiki/Interval" title="Interval">intervals</a> result in discarding the stability record, i.e. well-remembered <a href="/wiki/Item" title="Item">items</a> with short <a href="/wiki/Interval" title="Interval">intervals</a> are treated in the same way as other items with the same interval length and with the same <a href="/wiki/Difficulty" title="Difficulty">difficulty</a>.</li></ul>
+<p>See also:
+</p>
+<ul><li><a href="#Metrics:_First_year_of_testing">First year of measurements</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Is_Algorithm_SM-17_much_better_than_Algorithm_SM-15%3F#Why_it_is_hard_to_compare_intervals_between_different_algorithms">Comparing SuperMemo 16 and SuperMemo 17</a></li>
+<li><a href="/wiki/Algorithm_SM-20" title="Algorithm SM-20">Algorithm SM-20</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Strengths_of_Algorithm_SM-17">Strengths of Algorithm SM-17</h3></div>
+<ul><li>extending review optimization to various levels of recall (from cramming to decade-long delays)</li>
+<li><a href="/wiki/Optimum_interval" title="Optimum interval">optimum interval</a> is always based on the full <a href="/wiki/Repetition_history" title="Repetition history">history of repetitions</a></li>
+<li>data-based improvements to the algorithm can instantly be applied in the learning process by re-computing optimization matrices at 500,000 reps/min (previously, it would take months and years to collect corrective data)</li>
+<li>best fit difficulty determination</li>
+<li>universal memory formulas make it possible to simulate any imaginable learning outcomes, e.g. computing the efficiency of older algorithm post factum</li>
+<li>universal memory formulas make it possible to simulate review scenarios for individual <a href="/wiki/Item" title="Item">items</a>, e.g. computing maximum learning speed schedules, or best average retention schedules, or probability of recall at chosen <a href="/wiki/Interval" title="Interval">interval</a>, etc.</li>
+<li>separating the first review <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> and the first post-lapse review forgetting curves from the forgetting curve matrix for the sake of keeping homogeneous flow of <a href="/wiki/Item" title="Item">items</a> when computing changes in recall and <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stability</a></li>
+<li>employing power law for the first review <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> as more accurate for long-interval review. Shorter first <a href="/wiki/Interval" title="Interval">interval</a> should be well compensated by faster increase in successive intervals for well-formulated <a href="/wiki/Item" title="Item">items</a></li>
+<li>less sensitivity to chaotic oscillation in <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stability</a> caused by inaccurate stability or retrievability estimates. Those oscillations are not visible in older algorithms as stability estimates were not available to juxtapose against the <a href="/wiki/Interval" title="Interval">interval</a> used in the learning process</li>
+<li>expressing first post-lapse <a href="/wiki/Interval" title="Interval">interval</a> as a function of <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> (in addition to the number of <a href="/wiki/Lapse" title="Lapse">lapses</a>) yields better Recall-Retrievability matching later in the learning process</li>
+<li>expressing first post-lapse <a href="/wiki/Interval" title="Interval">interval</a> as a function of <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> makes it easier to estimate the <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> of forgotten <a href="/wiki/Item" title="Item">items</a> by filtering out <a href="/wiki/Lapse" title="Lapse">lapses</a> caused by delays</li>
+<li>35-quantile <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> for the first review spans a decade (rather than just 3 weeks as in older versions of the algorithm)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Weaknesses_of_Algorithm_SM-17">Weaknesses of Algorithm SM-17</h3></div>
+<ul><li>unlike all prior versions of the algorithm, Algorithm SM-17 requires a full record of <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a> for all <a href="/wiki/Item" title="Item">items</a>. This adds an additional burden on developers and licensees</li>
+<li>one-to-one mapping between recall and <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> remains elusive. This is the main validity test for the underlying theory of memory. There is still room for improvement, esp. for difficult <a href="/wiki/Item" title="Item">items</a></li>
+<li>older versions of the algorithm would keep 255 most recent repetition outcomes when plotting multidimensional <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a>. Algorithm SM-17 keeps the full record of repetitions. This may make it more "conservative" in adapting to user's own progress (e.g. in formulating <a href="/wiki/Item" title="Item">items</a>). However, users of auto-memorized <a class="external text" href="http://super-memo.com/ae2002.html">Advanced English 2014</a> showed dramatically bad recall predicted by the first <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> in SuperMemo 16. This would be less prominent in Algorithm SM-17. Amending the inflexibility of Algorithm SM-17 is still in consideration (e.g. by recency weighing). <b>Update 2026:</b> You may notice that the <a href="/wiki/First_interval" class="mw-redirect" title="First interval">first interval</a> in <a class="mw-selflink selflink">Algorithm SM-19</a> is slightly longer due to weighing in the recency-based exponential forgetting curve from <a href="/wiki/Algorithm_SM-15" title="Algorithm SM-15">Algorithm SM-15</a>. This improves both <a href="/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms" title="Universal metric for cross-comparison of spaced repetition algorithms">metrics</a> and <a href="/wiki/Memory_consolidation" title="Memory consolidation">memory consolidation</a>.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Theory">Theory</h2></div>
+<div class="mw-heading mw-heading3"><h3 id="Two_component_memory_model">Two component memory model</h3></div>
+<p>The story and the implications of the <a href="/wiki/Two_component_model_of_memory" title="Two component model of memory">two component model of memory</a> are described in <a href="/wiki/Two_components_of_memory" title="Two components of memory">this article</a>. 
+</p><p>Due to the fact that real-life application of SuperMemo require tackling learning material of varying difficulty, the third variable involved in the model is item difficulty (D). Some of the implication of item difficulty have also be discussed in the above article. In particular, the impact of composite memories with subcomponents of different memory stability (S). The three component model of memory is referred to as the <a href="/wiki/DSR_model" class="mw-redirect" title="DSR model">DSR model</a>.
+</p><p>For the purpose of the new algorithm we have defined the three components of memory as follows:
+</p>
+<ul><li><a href="/wiki/Memory_stability" title="Memory stability">Memory stability</a> (<b>S</b>) is defined as the <a class="external text" href="http://supermemopedia.com/wiki/Is_stability_just_an_interval%3F">inter-repetition interval that produces average recall probability of 0.9 at review time</a></li>
+<li><a href="/wiki/Memory_retrievability" class="mw-redirect" title="Memory retrievability">Memory retrievability</a> (<b>R</b>) is defined as the expected probability of recall at any time on the assumption of negatively exponential forgetting of homogenous learning material with the decay constant determined by memory stability (S)</li>
+<li><a href="/wiki/Item_difficulty" class="mw-redirect" title="Item difficulty">Item difficulty</a> (<b>D</b>) is defined as the maximum possible increase in memory stability (S) at review mapped linearly into 0..1 interval with 0 standing for easiest possible <a href="/wiki/Item" title="Item">items</a>, and 1 standing for highest difficulty in consideration in SuperMemo (the cut off limit currently stands at stability increase 6x less than the maximum possible)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Historical_note:_three_variables_of_memory">Historical note: three variables of memory</h3></div>
+<p>The three variables of memory were introduced gradually into SuperMemo algorithms:
+</p>
+<ul><li>Difficulty (D) was first introduced in SuperMemo 1.0 (1987) in the form of <a href="/wiki/E-Factor" title="E-Factor">E-Factors</a> that reflected difficulty. E-Factors would decrease each time <a href="/wiki/Item" title="Item">items</a> performed poorly in learning</li>
+<li>Stability (S) was first hinted at in SuperMemo 5.0 (1989), which was able to demonstrate the decline in stability increase with longer <a href="/wiki/Interval" title="Interval">intervals</a> (decrease in <a href="/wiki/O-Factor" class="mw-redirect" title="O-Factor">O-Factors</a> with the increase in repetition number)</li>
+<li>Retrievability (R) was first accounted for in SuperMemo 11 (2002), which used a heuristic formula to compensate for <a href="/wiki/Spacing_effect" title="Spacing effect">spacing effect</a> in massed presentation and in delayed review</li></ul>
+<p>All <a href="/wiki/DSR_model" class="mw-redirect" title="DSR model">three variables</a> can now be computed precisely using <a href="/wiki/Repetition_history" title="Repetition history">repetition histories</a> in Algorithm SM-17.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Deviations">Deviations</h3></div>
+<p>To assess how well computer models fit reality, SuperMemo uses its own deviation measures. In particular:
+</p>
+<ol><li>the deviation between grades and predicted grades derived from <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> when computing the SInc[] matrix, and</li>
+<li>the deviation between matrices and theoretical symbolic function (in particular, the entries of the SInc[] matrix and the theoretically predicted values of the stability increase function Sinc()).</li></ol>
+<div class="mw-heading mw-heading4"><h4 id="Grade_deviation">Grade deviation</h4></div>
+<p>SuperMemo converts <a href="/wiki/Grade" title="Grade">grades</a> to average <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> correlated with those grades for a given user (every user has his own system of grading and different levels of average retrievability will correspond with individual grades). The grade-derived deviation (gDev) is the difference between grade-derived retrievability (Rg) and theoretical retrievability (Rt) derived from stability estimate (Sw). The fail-success deviation (fDev) is 1-R for grades&gt;2 and R for grades&lt;3.
+</p><p>In estimating the deviation of grades from predicted grades, SuperMemo uses the formula:
+</p>
+<blockquote>
+<p>Dev=BGW*fDev+(1-BGW)*abs(gDev)
+</p>
+<div>
+<p>where:
+</p>
+<ul><li>Dev - prediction deviation</li>
+<li>BGW - binary vs. grade-based weight (currently chosen to be 70%)</li>
+<li>fDev - binary success-failure deviation</li>
+<li>gDev - grade derived retrievability deviation</li></ul>
+</div>
+</blockquote>
+<p>The deviation for an item repetition history is computed as the square root of the average of squared deviations (Dev) for each repetition.
+</p><p>The deviation for a <a href="/wiki/Collection" title="Collection">collection</a> is computed as the square root of the average of squared deviations (Dev) for each <a href="/wiki/Repetition" title="Repetition">repetition</a> in each <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a> of each <a href="/wiki/Item" title="Item">item</a>.
+</p><p>In least squares comparison, for <a href="/wiki/Item" title="Item">items</a> or for <a href="/wiki/Collection" title="Collection">collections</a>, the least squares deviation is:
+</p>
+<blockquote>
+<p>LSDev=sqrt(sum(square(Dev))/count)
+</p>
+<div>
+<p>where:
+</p>
+<ul><li>LSDev - least squares deviation for all grade predictions (Dev) in a subset of repetition histories</li>
+<li>count - number of repetitions in the set</li>
+<li>sqrt - square root</li></ul>
+</div>
+</blockquote>
+<p>The assumed weighing (BGW) is a heuristic based on experiments and the fact that grade-retrievability correlation makes for a weak prediction of grades based on R. The said deviation formula is subject to change.
+</p><p>The deviation used in estimating <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> is weighed further to increase the impact of more recent repetitions on the current difficulty estimate.
+</p><p>Currently, for large <a href="/wiki/Collection" title="Collection">collections</a>, the algorithm can generate stability increase matrix which produces a deviation of 18%. Considering the stochastic nature of forgetting, this number would be close to the lowest possible theoretical value if only fail-success deviation (fDev) was used. However, grade-derived deviation (gDev) reduces the span of the deviation (by making R predictions more precise). 
+</p>
+<div class="mw-heading mw-heading6"><h6 id="Theoretical_minimum_to_a_grade_deviation">Theoretical minimum to a grade deviation</h6></div>
+<p>When using predicted grade deviations in assessing the strength of particular algorithmic solutions, we need to keep in mind that there is a theoretical limit on the minimum value of the deviation. This means that we will never approach the ideal 0% deviation.
+</p><p>For the formulas used above, the limit will depend on weights (e.g. BGW) and particular user's grade-retrievability averages.
+</p><p>If only binary success-failure deviation (fDev) was used, and all <a href="/wiki/Item" title="Item">items</a> were scheduled with a perfect <a href="/wiki/Interval" title="Interval">interval</a> at the <a class="external text" href="https://help.supermemo.org/wiki/Forgetting_index#requested_forgetting_index">requested forgetting index</a> of 10%, the minimum deviation would correspond with the retrievability prediction of 0.9. That deviation would then be:
+</p>
+<blockquote>
+<p>sqrt((R-Failure)*(R-Failure)*P(failure)+(R-Success)*(R-Success)*P(success))
+</p>
+</blockquote>
+<p>which is:
+</p>
+<blockquote>
+<p>sqrt((0.9-0)*(0.9-0)*0.1+(0.9-1)*(0.9-1)*0.9)=30%
+</p>
+</blockquote>
+<p>In addition to the least square deviation, SuperMemo 17 will provide a few other metrics for assessing the effectiveness of the algorithm. If you want to find your metric in SuperMemo options, please join the discussion: <a class="external text" href="http://supermemopedia.com/wiki/Spaced_repetition_algorithm_metric">Spaced repetition algorithm metric</a>
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Matrix_deviation">Matrix deviation</h4></div>
+<p>SuperMemo uses matrix representations to express various functions, and hill-climbing approximations to find best theoretical symbolic matches for those functions for use in various contexts.
+</p><p>To guide the hill-climbing algorithms, a separate deviation measure is used as an optimization criterion. For each individual matrix entry:
+</p>
+<blockquote>
+<p>Dev=sqr(abs(MatrixValue-ApproximationValue)/MatrixValue))
+</p>
+</blockquote>
+<p>The deviation for the entire matrix is the square root of the average of individual deviations (Dev). SuperMemo expresses that deviation in percent.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Approximations">Approximations</h3></div>
+<p>SuperMemo uses hill-climbing algorithms to match hypothetical functions that might model data categories of interest for the algorithm. Those functions can later be used to speed up calculations of Algorithm SM-17.
+Currently, three best fit approximation procedures are used to verify theoretical formulas used in the algorithm. Those approximations determine the following functions:
+</p>
+<ul><li>stability increase (arguments: D, S, R)</li>
+<li>recall (arguments: D, S, R)</li>
+<li>first post-lapse interval (arguments: Lapses, R)</li></ul>
+<p>Those approximation procedures may also be used in research that helps validate the algorithm. For example, to prove the exponential nature of forgetting, take additive and multiplicative variants of approximation formulas for Recall[D,S,R] with separate set of parameters defining power and exponential components along the R dimension. Outcome: despite the fact that heterogeneous <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a> may appear to follow the power law, Algorithm SM-17 is filtering <a href="/wiki/Item" title="Item">items</a> for <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> well enough to eliminate the power component entirely from the equation. Note that the <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> describing the first review does not form a part of the Recall[] matrix. This is because a heterogeneous stream of new <a href="/wiki/Item" title="Item">items</a> might pollute the matrix and initiate the "ripple effect" of distorted estimates for higher stability levels (as in older SuperMemos). That first review <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> follows the power law pretty well and, unlike in older SuperMemos, power regression is used to produce the default <a href="#Startup_stability">startup stability</a> for new <a href="/wiki/Item" title="Item">items</a>.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Approximation_parameters_in_student_assessment">Approximation parameters in student assessment</h4></div>
+<p>There are several hypothetical correlations between approximation parameters and characteristics of user's learning process and knowledge quality. For example:
+</p>
+<ul><li>RMax in stability increase may be a good overall indicator of the quality of learning (the higher the RMax, the closer the approach to the optimum characterized by <a href="/wiki/Minimum_information_principle" title="Minimum information principle">minimum information principle</a>)(RMax is <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> that maximized the increase in <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a>)</li>
+<li>S Decay in stability increase may be a good indicated of the quality of knowledge (the worse the formulation, the higher S Decay)(S Decay is the decay constant determining how fast SInc[] decreases in the S dimension)</li>
+<li>Recall Intercept in recall approximation is higher in well formulated <a href="/wiki/Collection" title="Collection">collections</a> (Recall Intercept is a measure of the agreement between Recall[] matrix and the theoretical exponential decline in recall with time)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="The_Algorithm">The Algorithm</h2></div>
+<div class="mw-heading mw-heading3"><h3 id="Intro">Intro</h3></div>
+<p>Algorithm SM-17 computes new <a href="/wiki/Interval" title="Interval">intervals</a> using the <b><a href="/wiki/Stabilization" title="Stabilization">stability increase function</a></b>. This function tells <a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a> how much intervals should increase for all possible combinations of <a href="/wiki/Two_component_model_of_memory" title="Two component model of memory">memory status variables</a>: <a href="/wiki/Difficulty" title="Difficulty">Difficulty</a>, <a href="/wiki/Stability" class="mw-redirect" title="Stability">Stability</a> and <a href="/wiki/Retrievability" title="Retrievability">Retrievability</a>. SuperMemo determines item difficulty by finding which difficulty level provides the best fit to <a href="/wiki/Grade" title="Grade">grades</a> scored in <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a>. The first <a href="/wiki/Interval" title="Interval">interval</a> is computed in a way that is similar to earlier SuperMemos. The stability increase function is computed using data collected during <a href="/wiki/Repetition" title="Repetition">repetitions</a>.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Stabilization">Stabilization</h4></div>
+<p>Central to Algorithm SM-17 is the <b><a href="/wiki/Stabilization" title="Stabilization">stability increase function</a> (stabilization)</b> represented by the stability increase matrix (abbreviated to <i>SInc[]</i>). The simple formula at the core of <a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a> is:
+</p>
+<blockquote>
+<p><a href="/wiki/Interval" title="Interval">Int</a>[n]=Int[n-1]*<a href="/wiki/SInc" class="mw-redirect" title="SInc">SInc</a>[D,S,R]
+</p>
+</blockquote>
+<p>This means that <a href="/wiki/Optimum_interval" title="Optimum interval">optimum intervals</a> in SuperMemo increase by SInc[] in each <a href="/wiki/Repetition" title="Repetition">repetition</a> (assuming the <a href="/wiki/Forgetting_index" title="Forgetting index">forgetting index</a> is 10%). D, S, R stand for 3 memory variables: <a href="/wiki/Difficulty" title="Difficulty">difficulty</a>, <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> and <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> respectively.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a href="/wiki/File:Stability_increase_function.png" class="mw-file-description" title="Stability increase function"><img alt="Stability increase function" src="/images/thumb/2/2b/Stability_increase_function.png/600px-Stability_increase_function.png" decoding="async" width="600" height="375" class="mw-file-element" srcset="/images/thumb/2/2b/Stability_increase_function.png/900px-Stability_increase_function.png 1.5x, /images/thumb/2/2b/Stability_increase_function.png/1200px-Stability_increase_function.png 2x" /></a><figcaption>Stability increase function</figcaption></figure>
+<blockquote><p><i><b>Figure:</b> <a href="/wiki/Stability_increase" class="mw-redirect" title="Stability increase">Stability increase</a> function as computed by <a href="/wiki/Algorithm_SM-17" class="mw-redirect" title="Algorithm SM-17">Algorithm SM-17</a>. The function takes three arguments: (1) <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> at review expressed in days (on the left), (2) <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> at review (on the right), and (3) memory <a href="/wiki/Complexity" class="mw-redirect" title="Complexity">complexity</a> expressed as <a href="/wiki/Item" title="Item">item</a> <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> (slider labelled <b>Diff</b> currently set at 0.8). In the picture, stability increase peaks at around 15 (vertical axis). For some levels of <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> and <a href="/wiki/Retrievability" title="Retrievability">retrievability</a>, the function drops below 1.0 indicating a decrease in <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> (e.g. due to premature review evoking the <a href="/wiki/Spacing_effect" title="Spacing effect">spacing effect</a> in massed presentation). 61,768 repetitions of relatively <a href="/wiki/Difficulty" title="Difficulty">difficult</a> <a href="/wiki/Item" title="Item">items</a> were needed to produce this graph (at Diff=0.8). The longest <a href="/wiki/Interval" title="Interval">intervals</a> reach around 14 years (<a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> quantile 5172)</i></p></blockquote>
+<div class="mw-heading mw-heading4"><h4 id="Startup_stability_and_startup_interval">Startup stability and startup interval</h4></div>
+<p>Before the formula for the increase in the length of <a href="/wiki/Interval" title="Interval">intervals</a> can be used, we need to determine the initial <a href="/wiki/Startup_stability" title="Startup stability">startup stability</a> and the <a href="/wiki/First_interval" class="mw-redirect" title="First interval">first interval</a> to use in <a href="/wiki/Repetition" title="Repetition">repetitions</a>:
+</p>
+<ul><li><b><a href="/wiki/Startup_interval" title="Startup interval">startup interval</a></b> (SI) is the common first <a href="/wiki/Interval" title="Interval">interval</a> for all new <a href="/wiki/Item" title="Item">items</a> determined by the <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> for new heterogeneous material</li>
+<li><b>startup stability estimate</b> (S0) is the estimate of <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> after the first review determined by the best match to <a href="/wiki/Grade" title="Grade">grades</a> obtained in later <a href="/wiki/Repetition" title="Repetition">repetitions</a> (that estimate may change with the arrival of new data)</li>
+<li><b><a href="/wiki/Post-lapse_stability" title="Post-lapse stability">post-lapse stability</a></b> (PLS) is the <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> of an <a href="/wiki/Item" title="Item">item</a> after a <a href="/wiki/Repetition" title="Repetition">repetition</a> that scored a failing <a href="/wiki/Grade" title="Grade">grade</a></li></ul>
+<p>The relevant formulas used to determine initial <a href="/wiki/Interval" title="Interval">intervals</a> in <a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a> are:
+</p>
+<blockquote>
+<p>Int[1]=SI (for the first repetition)</p>
+<p>Int[1]=PLS (for the first review after a failing grade)</p>
+<p>Int[2]=S0*<a href="/wiki/SInc" class="mw-redirect" title="SInc">SInc</a>[D,S,R]</p>
+</blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Historical_note:_adding_retrievability_dimension">Historical note: adding retrievability dimension</h3></div>
+<p>The SInc[] matrix is similar to the <a href="/wiki/Matrix_of_optimal_factors" title="Matrix of optimal factors">matrix of optimal factors</a> from earlier SuperMemos (OF matrix in SuperMemo 5.0 through SuperMemo 16.0), but it takes different arguments. In the same way as OF-matrix determined the increase of <a href="/wiki/Interval" title="Interval">intervals</a>, SInc[] is used in the exact same way except it takes three arguments: <a href="/wiki/Difficulty" title="Difficulty">Difficulty</a>, <a href="/wiki/Stability" class="mw-redirect" title="Stability">Stability</a> and <a href="/wiki/Retrievability" title="Retrievability">Retrievability</a>. OF-matrix was indexed by <a href="/wiki/A-Factor" title="A-Factor">A-Factors</a> (reflecting <a href="/wiki/Difficulty" title="Difficulty">Difficulty</a>) and <a href="/wiki/Repetition_category" title="Repetition category">repetition category</a> (roughly related to <a href="/wiki/Stability" class="mw-redirect" title="Stability">Stability</a>). However, OF matrix did not include the <a href="/wiki/Retrievability" title="Retrievability">Retrievability</a> dimension as repetitions were supposed to be executed at <a href="/wiki/Optimum_interval" title="Optimum interval">optimum intervals</a> determined by the <a href="/wiki/Requested_forgetting_index" class="mw-redirect" title="Requested forgetting index">requested forgetting index</a>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Item_difficulty">Item difficulty</h3></div>
+<p>Computing item difficulty was pretty complex in Algorithm SM-17. The procedure was simplified in Algorithm SM-18/SM-19. See: <a href="/wiki/Item_difficulty_in_Algorithm_SM-18" title="Item difficulty in Algorithm SM-18">Item difficulty in Algorithm SM-18</a>
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Difficulty:_Definition">Difficulty: Definition</h4></div>
+<p>Item difficulty in SuperMemo Algorithm SM-17 is a number from 0 (easiest) to 1 (hardest). <a href="/wiki/Item" title="Item">Items</a> are linearly mapped in the 0..1 difficulty range by using their maximum possible memory stability increase. Maximum increase in <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> occurs in the first review when the length of the <a href="/wiki/Interval" title="Interval">interval</a> corresponds with <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> that produces the greatest increase in the strength of memory. <a href="/wiki/Item" title="Item">Items</a> with theoretically highest possible stability increase are assigned difficulty of 0. These are the easiest <a href="/wiki/Item" title="Item">items</a> in the process. Those <a href="/wiki/Item" title="Item">items</a> are the target of all forms of learning as they are a perfect reflection of the <a href="/wiki/Minimum_information_principle" title="Minimum information principle">minimum information principle</a>. As the maximum stability increase for very difficult <a href="/wiki/Item" title="Item">items</a> may approach 1.0 (or even drop below that value, i.e. produce <b>memory lability</b>!), all items at certain lowest acceptable maximum <a href="/wiki/Stability_increase" class="mw-redirect" title="Stability increase">stability increase</a> are classified as having difficulty 1.0. The exact cut off number is the parameter of the algorithm that is subject to change and further optimization (see Value N in Computing difficulty algorithm below). See also: <a href="/wiki/Item_difficulty_in_Algorithm_SM-18" title="Item difficulty in Algorithm SM-18">Item difficulty in Algorithm SM-18</a>
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Historical_note:_measuring_difficulty">Historical note: measuring difficulty</h4></div>
+<p>As of Algorithm SM-8, SuperMemo used the concept of <a href="/wiki/A-Factor" title="A-Factor">A-Factor</a> to define item difficulty. A-Factor was defined as the increase in <a href="/wiki/Optimum_interval" title="Optimum interval">optimum interval</a> during the first <a href="/wiki/Repetition" title="Repetition">repetition</a> (RepNo=2 in SuperMemo). In most situations, A-Factor would fall in the 1.0-10.0 range. SuperMemo employed the range from 1.2 to 6.9 where the 1.2 limit was set for the sake of filtering out the so-called "leech material", i.e. material whose difficulty would disqualify it from efficient use of <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a>. Algorithm SM-17 might have used that A-Factor definition or strive at a more universal concept of maximum increase in <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stability</a>. Those two approaches do not need to differ much as newer data indicate that the maximum stability increase occurs at <a href="/wiki/Retrievability" title="Retrievability">retrievability (R)</a> that are close to the <a href="/wiki/Forgetting_index" title="Forgetting index">default levels</a> used in SuperMemo. Algorithm SM-17 normalizes difficulty in the 0 (easiest) to 1 (hardest) range to roughly correspond with A-Factors 1.1 to 10.0. The assumption is that <a href="/wiki/Item" title="Item">items</a> that are harder than A-Factor=1.1 should be eliminated from the learning process, while items that are easier than A-Factor=10.00 are either extremely rare or can safely be treated along the rest of 10.0 items with a negligible impact on total workload.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Computing_difficulty">Computing difficulty</h4></div>
+<p>Algorithm SM-17 requires a full <a href="/wiki/Repetition_history" title="Repetition history">history of repetitions</a> to compute <a href="/wiki/Difficulty" title="Difficulty">item difficulty</a> (see below for a simplified procedure that goes around that requirement for developers who might wish to develop <i>light</i> SuperMemos that might look at smaller data sets for mobile devices, etc.).
+</p><p>For the full range of possible <a href="/wiki/Difficulty" title="Difficulty">item difficulties</a>, Algorithm SM-17 computes the <a href="/wiki/Deviation" title="Deviation">deviations</a> of predicted <a href="/wiki/Grade" title="Grade">grades</a> (based on a given assumed difficulty) from the actual grades as recorded in <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a> of a given <a href="/wiki/Item" title="Item">item</a>. The algorithm chooses the <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> that produces the least deviation.
+</p>
+<div class="mw-heading mw-heading5"><h5 id="Computing_difficulty:_Algorithm_outline">Computing difficulty: Algorithm outline</h5></div>
+<p>Computing difficulty:
+</p>
+<ol><li>Set <a href="/wiki/Startup_interval" title="Startup interval">S</a> to the default optimum first <a href="/wiki/Interval" title="Interval">interval</a> from the first <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> for mixed difficulty material</li>
+<li>For all difficulty quantiles, using Algorithm SM-17, compute the deviation of predicted <a href="/wiki/Grade" title="Grade">grades</a> based on that difficulty, <a href="/wiki/S0" class="mw-redirect" title="S0">S0</a>, and the actual <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a> from the grades scored in that repetition history</li>
+<li>Find maximum and minimum quantiles with lowest deviation (very often, several quantiles will produce the exactly same deviation as a real number <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> is converted to <a href="/wiki/Grade" title="Grade">grades</a>, which are integers)</li>
+<li>Assume that the <a href="/wiki/Item" title="Item">item</a> in question has a <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> that corresponds with the average of minimum and maximum quantiles that generate the minimum deviation</li></ol>
+<p>Note that weighing quantiles by deviations tends to amass most <a href="/wiki/Difficulty" title="Difficulty">difficulties</a> around 0.5, which shows that this is not a valid approach.
+</p><p>Computing the <a href="/wiki/Deviation" title="Deviation">deviation</a>: 
+</p>
+<ol><li>set S to <a href="/wiki/S0" class="mw-redirect" title="S0">S0</a></li>
+<li>for each <a href="/wiki/Repetition" title="Repetition">repetition</a>, using the <a href="/wiki/Interval" title="Interval">interval</a>, compute new S using <a href="/wiki/SInc" class="mw-redirect" title="SInc">SInc</a>[] matrix indexed by the assumed <a href="/wiki/Difficulty" title="Difficulty">difficulty</a>, <a href="/wiki/Stability" class="mw-redirect" title="Stability">S</a>, and <a href="/wiki/Retrievability" title="Retrievability">R</a> (corresponding with the interval)</li>
+<li>for each repetition, using <a href="/wiki/Stability" class="mw-redirect" title="Stability">S</a> and <a href="/wiki/Interval" title="Interval">interval</a>, compute <a href="/wiki/Retrievability" title="Retrievability">R</a> and convert it to a predicted <a href="/wiki/Grade" title="Grade">grade</a> (using R:grade mapping characteristic for the user)</li>
+<li>compare that <a href="/wiki/Grade" title="Grade">grade</a> to the actual grade and add the difference to the deviation</li></ol>
+<p>Some important considerations in difficulty calculations:
+</p>
+<ol><li>recent repetitions have a greater weight than older repetitions due to the fact that <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> is subject to change over time (e.g. due to new learning or minor item reformulation)</li>
+<li><a href="/wiki/Difficulty" title="Difficulty">difficulty</a> can be computed using theoretical SInc() function, or actual <a href="/wiki/SInc" class="mw-redirect" title="SInc">SInc</a>[] matrix data. The outcomes will differ. In particular, the range of minimum and maximum quantiles with the minimum deviation may be larger when using real/irregular data. The superiority of one of the approaches is hard to establish</li></ol>
+<p>The solution adopted in Algorithm SM-17 was to use BestSInc() function that transitions from the theoretic SInc() towards data-based SInc[] with the gradual inflow of new data. 
+</p><p>Theoretical SInc() function is the root where the baseline mapping of maximum stability increase to difficulty is established:
+</p>
+<blockquote>
+<p>SInc:=(5*(1-<a href="/wiki/Difficulty" title="Difficulty">Difficulty</a>)+1)*f(R,S)+1
+</p>
+<div>
+<p>where:
+</p>
+<ul><li>SInc - stability increase</li>
+<li>Difficulty - difficulty in 0..1 range</li>
+<li>f(R,S) - component of SInc that depends on R and S</li></ul>
+</div>
+</blockquote>
+<p>f(R,S) can be derived by curve fitting from a data-rich SInc[D,S,R] by ignoring the difficulty dimension. It should then be the best approximation of <a href="/wiki/SInc" class="mw-redirect" title="SInc">SInc</a>[S,R]. In that sense, SInc[] is circular. Its first approximation is derived from data, the new value is determined to obtain a better approximation, etc. This exercise is necessary for good interval approximations before any data is obtained in a new <a href="/wiki/Collection" title="Collection">collection</a>.
+</p><p>This baseline formula currently determines the cutoff value for hardest possible <a href="/wiki/Item" title="Item">items</a> at SInc that is N times less than the maximum value possible for easiest items (with N=(6*f(R,S)+1)/(f(R,S)+1)).
+</p>
+<div class="mw-heading mw-heading5"><h5 id="Computing_difficulty:_Simplified_procedure">Computing difficulty: Simplified procedure</h5></div>
+<p>We have also developed a simplified solution for computing <a href="/wiki/Difficulty" title="Difficulty">item difficulties</a>. This might be useful for developers who look for simplicity, thinner and faster code. The simplified procedure is similar to the approach used in older SuperMemos, esp. SuperMemo 8 through SuperMemo 16. 
+</p><p><a href="/wiki/Difficulty" title="Difficulty">Item difficulty</a> may be made history-less by relying on the fact that difficulty of an <a href="/wiki/Item" title="Item">item</a> keeps evolving depending on the context of knowledge and through interference. For that reason, the performance in the most recent <a href="/wiki/Repetition" title="Repetition">repetition</a> counts more than performance in prior repetitions. 
+</p><p>Simplified difficulty can then be obtained using the formula:
+</p>
+<blockquote>
+<p>D[n]=sDF(D[n-1],Grade,Rr)
+</p>
+<div>
+<p>where:
+</p>
+<ul><li>sDF - simplified difficulty function</li>
+<li>D[n] - difficulty estimate after the n-th repetition</li>
+<li>Grade - grade scored in the n-th repetition</li>
+<li>Rr - expected recall at the time of the n-th repetition (based on the Recall[D,S,R] matrix)</li></ul>
+</div>
+</blockquote>
+<p>Unlike best-fit <a href="/wiki/Difficulty" title="Difficulty">difficulty</a>, simplified difficulty requires no expensive hill-climbing optimization that may slow down SuperMemo (e.g. when computing learning data for long <a href="/wiki/Repetition_history" title="Repetition history">repetition histories</a>). The accuracy of the simplified difficulty estimation is bound to be less and is currently being estimated.
+</p><p>A similar simplified approach was also adopted in <a href="/wiki/SuperMemo_18" title="SuperMemo 18">SuperMemo 18</a>. The new approach may be as effective or superior to the approach used in Algorithm SM-17. Its implementation is greatly simplified, and the cost of computing is dramatically less (no hill climbing). See: <a href="/wiki/Item_difficulty_in_Algorithm_SM-18" title="Item difficulty in Algorithm SM-18">Item difficulty in Algorithm SM-18</a>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Startup_interval">Startup interval</h3></div>
+<p>The first <a href="/wiki/Interval" title="Interval">interval</a> called <b><a href="/wiki/Startup_interval" title="Startup interval">startup interval</a></b> (<i>Int[1]</i> or <i>SI</i>) is determined using the first <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a>. Unlike the entries of the <a href="/wiki/Recall_matrix" title="Recall matrix">Recall[] matrix</a>, the first forgetting curve data is collected using 35 quantiles determined by the interval distribution on a large representative sample collected from an <a href="/wiki/Incremental_reading" title="Incremental reading">incremental reading</a> <a href="/wiki/Collection" title="Collection">collection</a>. Those quantiles span nearly a decade (older SuperMemos collected data for only the first 20 days after memorizing the <a href="/wiki/Item" title="Item">item</a>). The startup interval (the first <a href="/wiki/Optimum_interval" title="Optimum interval">optimum interval</a>) is determined by power regression on that forgetting curve data. Power law forgetting is the result of the superposition of exponential <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a> of heterogeneous indeterminate difficulty material entering the learning process. 
+</p><p>The first <a href="/wiki/Interval" title="Interval">interval</a> is corrected for the <a class="external text" href="https://help.supermemo.org/wiki/Forgetting_index#requested_forgetting_index">requested forgetting index (rFI)</a> and may be subject to <a href="/wiki/Interval_dispersion" class="mw-redirect" title="Interval dispersion">random dispersion</a> that is a standard fixture of <a href="/wiki/SuperMemo_algorithm" class="mw-redirect" title="SuperMemo algorithm">SuperMemo algorithms</a> since 1989.
+</p><p>In short, the <a href="/wiki/Startup_interval" title="Startup interval">startup interval</a> is determined by the point in time at which the <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> indicates the recall is likely to fall below the value determined by the <a class="external text" href="https://help.supermemo.org/wiki/Forgetting_index#requested_forgetting_index">requested forgetting index</a>.
+</p><p>Note that the startup interval (with rFI=10%) is not the same as the startup stability. The interval needs to be determined before the first review (i.e. be a resultant of prior <a href="/wiki/Repetition" title="Repetition">repetitions</a> of other <a href="/wiki/Item" title="Item">items</a>). The startup stability is determined from <a href="/wiki/Repetition_history" title="Repetition history">repetition histories</a> and may differ after each successive <a href="/wiki/Repetition" title="Repetition">repetition</a>. In short, it represents the best fit to data.
+</p><p>Earlier algorithms struggled with this determination: <a href="/wiki/Algorithm_SM-15" title="Algorithm SM-15">Algorithm SM-15</a> outperformed Algorithm SM-17 on the <a href="/wiki/Universal_metric" class="mw-redirect" title="Universal metric">universal metric</a> for the first interval, because SM-15 suffered from incomplete data that introduced a recency bias. Algorithm SM-19 resolves these issues by finding the optimum among three competing factors: completeness of data, recency, and the complex shape of the first forgetting curve. As a result, first intervals in Algorithm SM-19 are slightly longer than in its predecessors and are strongly dispersed around the optimum value. The simulated distribution of these first intervals in <a href="/wiki/SuperMemo_20" title="SuperMemo 20">SuperMemo 20</a> is shown as the lime-colored line in the figure below.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a href="/wiki/File:First_forgetting_curve_in_Algorithm_SM-19_(SuperMemo).jpg" class="mw-file-description" title="Forgetting curve as displayed in SuperMemo 20"><img alt="Forgetting curve as displayed in SuperMemo 20" src="/images/thumb/2/26/First_forgetting_curve_in_Algorithm_SM-19_%28SuperMemo%29.jpg/800px-First_forgetting_curve_in_Algorithm_SM-19_%28SuperMemo%29.jpg" decoding="async" width="800" height="493" class="mw-file-element" srcset="/images/thumb/2/26/First_forgetting_curve_in_Algorithm_SM-19_%28SuperMemo%29.jpg/1200px-First_forgetting_curve_in_Algorithm_SM-19_%28SuperMemo%29.jpg 1.5x, /images/thumb/2/26/First_forgetting_curve_in_Algorithm_SM-19_%28SuperMemo%29.jpg/1600px-First_forgetting_curve_in_Algorithm_SM-19_%28SuperMemo%29.jpg 2x" /></a><figcaption>Forgetting curve as displayed in SuperMemo 20</figcaption></figure>
+<blockquote><p><i><b>Figure:</b> The <a href="/wiki/First_forgetting_curve" title="First forgetting curve">first forgetting curve</a> for newly learned knowledge collected with <a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a>. Power approximation is used in this case due to the heterogeneity of the learning material freshly introduced in the learning process. Lack of separation by <a href="/wiki/Memory_complexity" title="Memory complexity">memory complexity</a> results in superposition of exponential forgetting with different decay constants. On a semi-log graph, the power regression curve is logarithmic (in yellow), and appearing almost straight. The curve shows that in the presented case recall drops merely to 58% in four years, which can be explained by a high reuse of memorized knowledge in real life. The first <a href="/wiki/Optimum_interval" title="Optimum interval">optimum interval</a> for review at <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> of 90% is 3.96 days. The <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curve</a> can be described with the formula R=0.9906*power(interval,-0.07), where 0.9906 is the recall after one day, while -0.07 is the decay constant. In this is case, the formula yields 90% recall after 4 days. 80,399 repetition cases were used to plot the presented graph. Steeper drop in recall will occur if the material contains a higher proportion of <a href="/wiki/Memory_complexity" title="Memory complexity">difficult</a> knowledge (esp. <a href="/wiki/20_rules" class="mw-redirect" title="20 rules">poorly formulated knowledge</a>), or in new students with lesser mnemonic skills. Curve irregularity at intervals 15-20 comes from a smaller sample of repetitions (later interval categories on a log scale encompass a wider range of intervals)</i></p></blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Startup_stability">Startup stability</h3></div>
+<p>Startup stability S[0] is the stability accomplished with the first single review. Unlike stability computed at later repetitions, this stability cannot be derived from the SInc[] matrix. Instead, it is computed in a way similar to the way <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> is computed. Within a range of possible values, S[0] is used to compute <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stabilities</a> after successive <a href="/wiki/Repetition" title="Repetition">repetitions</a>. The startup stability S[0] is taken as the value that produces the least predicted grade deviation from <a href="/wiki/Grade" title="Grade">grades</a> in <a href="/wiki/Repetition_history" title="Repetition history">repetition history</a>.
+</p><p>For histories with perfect recall, infinite stabilities minimize the grade deviation. This is why startup stability needs to be limited to the maximum allowed startup stability (S0Max). For all repetition histories in a large dataset, we have plotted the impact of S0Max on the overall grade deviation. It seems that for most users, the deviation does not improve beyond S0Max of 3 months. There are always items that will never fail (e.g. due to a real-life repetition), but very few memorized items can survive more than 3 months without the first review.
+</p><p>Reducing S0Max further (e.g. to 1 month), results in SInc[] matrix compensation, which tends to yield similar stabilities after a couple of repetitions. However, lower S0Max results in a higher grade deviation.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Post-lapse_stability">Post-lapse stability</h3></div>
+<p><a href="/wiki/Post-lapse_stability" title="Post-lapse stability">Post-lapse stability</a> (PLS) is the <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> after a review with a failing <a href="/wiki/Grade" title="Grade">grade</a>. Unlike <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> computed after successful <a href="/wiki/Repetition" title="Repetition">repetitions</a>, this stability cannot be derived from the SInc[] matrix.
+</p><p>In the ideal case, for simple memories, forgetting results in a reset of <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> back to near-zero. In theory, only difficult <a href="/wiki/Item" title="Item">items</a> made of composite memories may show a substantial decrease in the costs of re-learning, however, even that does not show in data (perhaps due to imperfect difficulty estimations or due to SuperMemo's natural tendency to help users eliminate hard-to-learn material in the learning process).
+</p><p>It has been shown long ago that the length of the first post-lapse optimum interval is best correlated with the number of <a href="/wiki/Lapse" title="Lapse">memory lapses</a> afforded an <a href="/wiki/Item" title="Item">item</a>. Even then, post-lapse interval usually oscillates in the 1-4 days range for <a href="/wiki/Forgetting_index" title="Forgetting index">forgetting index</a> of 10%, and the correlation is not very useful in adding to the efficiency of learning in optimizing the length of that interval. Some competitive spaced repetition software, as well as SuperMemo in its first years, experimented with re-learning hypotheses based on ancient wisdom of learning psychology, e.g. by halving <a href="/wiki/Interval" title="Interval">intervals</a> after a <a href="/wiki/Lapse" title="Lapse">memory lapse</a>. Current data shows clearly that this is a harmful and time-wasting approach.
+</p><p>In addition to <a href="/wiki/Lapse" title="Lapse">memory lapses</a>, there is also a strong correlation between the length of the post-lapse interval and <a href="/wiki/Retrievability" title="Retrievability">retrievability (R)</a>. This should be obvious considering that substantial delay in review will result in "undeserved" <a href="/wiki/Lapse" title="Lapse">lapse</a> on <a href="/wiki/Item" title="Item">items</a> that might be then quite easy to re-learn. Algorithm SM-17 takes retrievability dimension into account.
+</p><p>In the light of the above, SuperMemo uses a separate matrix for post-lapse stabilities: PLS[] with Lapse and Retrievability dimensions. The first <a href="/wiki/Interval" title="Interval">interval</a> after scoring a failing <a href="/wiki/Grade" title="Grade">grade</a> is then determined as follows:
+</p>
+<blockquote>
+<p>Int[1]:=PLS[Lapses,R]
+</p>
+<div>
+<p>where:
+</p>
+<ul><li>Int[1] - first <a href="/wiki/Interval" title="Interval">interval</a> (after a failing <a href="/wiki/Grade" title="Grade">grade</a>)</li>
+<li>PLS[] - post-lapse interval matrix</li>
+<li>Lapses - total number of <a href="/wiki/Lapse" title="Lapse">memory lapses</a> (failing grades) scored by the <a href="/wiki/Item" title="Item">item</a></li>
+<li>R - <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> at the moment of the lapse</li></ul>
+</div>
+</blockquote>
+<figure class="mw-halign-center" typeof="mw:File"><a href="/wiki/File:Post-lapse-interval-in-Algorithm-SM-19_(SuperMemo).png" class="mw-file-description"><img src="/images/thumb/3/38/Post-lapse-interval-in-Algorithm-SM-19_%28SuperMemo%29.png/800px-Post-lapse-interval-in-Algorithm-SM-19_%28SuperMemo%29.png" decoding="async" width="800" height="429" class="mw-file-element" srcset="/images/thumb/3/38/Post-lapse-interval-in-Algorithm-SM-19_%28SuperMemo%29.png/1200px-Post-lapse-interval-in-Algorithm-SM-19_%28SuperMemo%29.png 1.5x, /images/thumb/3/38/Post-lapse-interval-in-Algorithm-SM-19_%28SuperMemo%29.png/1600px-Post-lapse-interval-in-Algorithm-SM-19_%28SuperMemo%29.png 2x" /></a><figcaption></figcaption></figure>
+<blockquote><p><i><b>Figure:</b> In <a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a>, post-lapse forgetting curves are often classic examples of <a href="/wiki/Bad_forgetting_curves" title="Bad forgetting curves">bad forgetting curves</a>. They show a steep drop in retention and yet keep a very long tail of reasonable recall. This is why in <a class="mw-selflink selflink">Algorithm SM-19</a>, the criterion of the <a href="/wiki/Forgetting_index" title="Forgetting index">forgetting index</a> is not used for post-lapse intervals. In the picture, optimum interval would need to be 1, while after 1 year, the retention is still 40%. Instead, SuperMemo randomly disperses post-lapse interval with the degree of dispersion greater for low priority items. Distribution of intervals is depicted as a lime line</i></p></blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Retrievability">Retrievability</h3></div>
+<div class="mw-heading mw-heading4"><h4 id="Theoretical_retrievability">Theoretical retrievability</h4></div>
+<p>In theory, <a href="/wiki/Retrievability" title="Retrievability">retrievability R</a> should be easy to derive from <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> and <a href="/wiki/Interval" title="Interval">interval</a>:
+</p>
+<blockquote>
+<p>R[n]:=exp(-k*t/S[n-1])
+</p>
+<div>
+<p>where:
+</p>
+<ul><li>R[n] - <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> at the n-th <a href="/wiki/Repetition" title="Repetition">repetition</a></li>
+<li>k - decay constant</li>
+<li>t - time (<a href="/wiki/Interval" title="Interval">interval</a>)</li>
+<li>S[n-1] - <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> after the (n-1)th <a href="/wiki/Repetition" title="Repetition">repetition</a></li></ul>
+</div>
+</blockquote>
+<p>That neat theoretical approach is made a bit more complex when we consider that forgetting may not be perfectly exponential if <a href="/wiki/Item" title="Item">items</a> are difficult or with mixed <a href="/wiki/Difficulty" title="Difficulty">difficulty</a>. In addition, <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a> in SuperMemo can be marred by user strategies in all situations where <a href="/wiki/Grade" title="Grade">grades</a> are not an ideal reflection of recall/<a href="/wiki/Retrievability" title="Retrievability">retrievability</a>.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Three_measures_of_retrievability">Three measures of retrievability</h4></div>
+<p>Theoretical two-component model may be undermined by imperfect difficulty filtering, user strategies, implementation shortcomings (e.g. poor choice of parameters), and imperfect modelling of reality. For that reason SuperMemo uses three different measures of retrievability:
+</p>
+<ul><li><b>Theoretical retrievability</b> (R) as derived from the exponential decline of recall over time (as above). This measure is a perfect reflection of passing time</li>
+<li><b>Recall matrix</b>: measured recall R for different levels of <a href="/wiki/Difficulty" title="Difficulty">item difficulty</a>, <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stability</a>, and theoretical R (or time). This measure is a perfect reflection of average recall (for imperfectly measured memory status parameters)</li>
+<li><b>Recall-Grade correlation</b>: all users have their own average level of recall corresponding with all five <a href="/wiki/Grade" title="Grade">grades</a> used in SuperMemo. This measure is highly unreliable (for example, there were cases in which higher grades have been shown to be associated with lower recall)</li></ul>
+<p><b>Recall matrix</b>: Algorithm SM-17 accounts for possible non-exponential decay of memory, as well as for D and S estimate errors, by using the <b>Recall[D,S,R] matrix</b>. Recall matrix takes the same arguments as the SInc[] matrix. Recall[D,S,R] is the average recall for <a href="/wiki/Item" title="Item">items</a> of <a href="/wiki/Difficulty" title="Difficulty">difficulty D</a>, at <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability level S</a>, and at <a href="/wiki/Retrievability" title="Retrievability">retrievability R</a>. Recall matrix keeps the forgetting curve record with the time axis expressed as <a href="/wiki/Retrievability" title="Retrievability">retrievability</a>. The main functions of Recall[] matrix are:
+</p>
+<ol><li>to measure the actual level of recall for different retrievability levels and</li>
+<li>verify the soundness of the model and its parameters (in the ideal theoretical case Recall should equal <a href="/wiki/Retrievability" title="Retrievability">retrievability</a>).</li></ol>
+<p>The actual recall level statistic is used to amend the theoretical retrievability level derived from stability and time. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a href="/wiki/File:Recall.jpg" class="mw-file-description" title="SuperMemo 17: The Recall[] matrix graph showing that actual recall differs from predicted retrievability"><img alt="SuperMemo 17: The Recall[] matrix graph showing that actual recall differs from predicted retrievability" src="/images/thumb/3/3f/Recall.jpg/600px-Recall.jpg" decoding="async" width="600" height="375" class="mw-file-element" srcset="/images/thumb/3/3f/Recall.jpg/900px-Recall.jpg 1.5x, /images/thumb/3/3f/Recall.jpg/1200px-Recall.jpg 2x" /></a><figcaption>SuperMemo 17: The Recall[] matrix graph showing that actual recall differs from predicted retrievability</figcaption></figure>
+<blockquote><p><i><b>Figure:</b> The <a href="/wiki/Recall_matrix" title="Recall matrix">Recall[] matrix</a> graph shows that the actual recall differs from predicted <a href="/wiki/Retrievability" title="Retrievability">retrievability</a>. For higher <a href="/wiki/Stability" class="mw-redirect" title="Stability">stabilities</a> and <a href="/wiki/Difficulty" title="Difficulty">difficulties</a>, it is harder to reach the desired recall level.</i></p></blockquote>
+<p><b>Recall-Grade correlation</b>: For individual <a href="/wiki/Repetition" title="Repetition">repetitions</a>, <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> can be checked against the average recall level registered for individual <a href="/wiki/Grade" title="Grade">grades</a> at <a href="/wiki/Repetition" title="Repetition">repetitions</a>. Success and failure of memory, as defined in the grade scale are also used to measure binary recall (0 - failure, 1 - success). Algorithm SM-17 uses both the recall-grade correlation and binary recall to add to the set of information needed to estimate <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stability</a>. <a href="/wiki/Grade" title="Grade">Grades</a> carry more information, while binary recall is a better reflection of forgetting. Those two must be weighed up when looking at grade-derived estimate of R.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Retrievability_estimate">Retrievability estimate</h4></div>
+<p><a href="#Three_measures_of_retrievability">All the three measures of retrievability</a> can be weighed up to provide for the best estimate of <a href="/wiki/Retrievability" title="Retrievability">R</a> that is used in further estimates of <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> and stability increase. Weights used in the estimate will change with inflow of new information (e.g. repetition cases registered in the Recall matrix). The ultimate goal of weight parameters is to minimize the deviation between the model and the <a href="/wiki/Grade" title="Grade">grades</a> scored in learning.
+</p><p>A careful distinction must be made between all measures of recall. Theoretical retrievability (R) concept is essential for indexing optimization matrices as R is the ultimate target when converging onto the theoretical model of memory. At the other extreme, stability estimates are item-specific and need to take into account past recall statistics and actual <a href="/wiki/Grade" title="Grade">grades</a> scored by a particular <a href="/wiki/Item" title="Item">item</a> in the learning process.
+</p><p>In <a href="/wiki/Algorithm_SM-18" title="Algorithm SM-18">Algorithm SM-18</a>, the role of grade-recall correlations was diminished and predicted <a href="/wiki/Retrievability" title="Retrievability">retrievability</a> is largely determined by the theoretical value (when data is unavailable), and the value derived from the <b>Recall</b> matrix (when data keeps arriving). For a mature collection, the value of predicted retrievability approaches the value derived form the Recall[] matrix. In fringe cases, the predicted value will differ substantially from theoretical retrievability. For example, when <a href="/wiki/Leech" title="Leech">leeches</a> drive down recall even after a day's long interval, the prediction may stand at R=76%, while the theoretical value is R=99%. In contrast, for material with excellent recall, predicted R may be much higher than the theoretical R computed for very long intervals. This high estimate for high quality material is the main reason for positive measures of <a href="/wiki/R-metric" class="mw-redirect" title="R-metric">R-metric</a> in SuperMemo 18.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Stability">Stability</h3></div>
+<p>The <a href="/wiki/Interval" title="Interval">interval</a> and the resulting <a href="/wiki/Grade" title="Grade">grade</a> can be used to draw conclusions about the stability estimate. If the <a href="/wiki/Interval" title="Interval">interval</a> is greater than <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a>, good <a href="/wiki/Grade" title="Grade">grades</a> indicate stability underestimate. Conversely, short <a href="/wiki/Interval" title="Interval">intervals</a> and poor <a href="/wiki/Grade" title="Grade">grades</a> may indicate an overestimate. This type of reasoning underlay the first attempt to compute the stability increase function in <a class="external text" href="http://www.super-memory.com/articles/stability.htm">this 2005 article</a>. However, due to being applicable to a subset of repetition scenarios, this information is insufficient to estimate stability for all <a href="/wiki/Item" title="Item">items</a> and all <a href="/wiki/Repetition" title="Repetition">repetitions</a>. In addition, conclusions drawn in 2005 differ substantially from the new data based on far more accurate recall-verified retrievability estimate (as described above). 
+</p><p>The second and more reliable source of information about <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a> is the value derived from retrievability estimate modified along prior recall measurements. <a href="/wiki/Stability" class="mw-redirect" title="Stability">Stability</a> can be estimated from retrievability level and the stability estimate value before the <a href="/wiki/Repetition" title="Repetition">repetition</a>. This is the most reliable estimate.
+</p><p>Last but not least, all <a href="/wiki/Repetition" title="Repetition">repetitions</a> produce a new value of estimated <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a>. That pre-repetition estimate is the third source of information on the actual level of <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a>.
+</p><p>Those three sources of information are weighed up for reliability (e.g. on the number of cases in the Recall matrix used to modify <a href="/wiki/Retrievability" title="Retrievability">R</a>, or the number of cases in the SInc[] matrix used to generate pre-repetition <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a>). The actual parameters used in weighing up information have been computed using optimization methods targeted at minimizing predicted grade deviation in larger <a href="/wiki/Collection" title="Collection">collections</a>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Stability_increase">Stability increase</h3></div>
+<p>Stability increase function is used to compute <a href="/wiki/Interval" title="Interval">intervals</a> in Algorithm SM-17.
+</p><p>The stability increase function is expressed in Algorithm SM-17 using three different methods:
+</p>
+<ul><li>the theoretical formula, which is a multiplicative compound expression of the impact of all its three <a href="/wiki/Difficulty" title="Difficulty">D</a>, <a href="/wiki/Stability" class="mw-redirect" title="Stability">S</a>, <a href="/wiki/Retrievability" title="Retrievability">R</a> arguments</li>
+<li>the matrix SInc[] built on the basis of data collected from <a href="/wiki/Collection" title="Collection">collection</a>'s <a href="/wiki/Repetition_history" title="Repetition history">repetition histories</a></li>
+<li>the <i>best compromise</i> function (BestSInc) that combines the information from the matrix, with support of neighboring matrix entries where data is missing, and with support of the theoretical function where no data is available</li></ul>
+<p>Due to its monotonicity, theoretical formula is used in all hill-climbing procedures which are employed richly in the algorithm. It is also used exclusively in new <a href="/wiki/Collection" title="Collection">collections</a> where no learning data is available. The SInc[] matrix is the truest expression of stability changes in user's particular <a href="/wiki/Collection" title="Collection">collection</a>. The SInc[] matrix has the greatest research value and is used in all contexts where true properties of memory need to be taken into account. The matrix is the key to Alg-SM17 adaptability. Finally, the ultimate compromise BestSInc() function is a statement on what is best known about the memory properties and learning strategies of the user and his or her particular <a href="/wiki/Collection" title="Collection">collection</a> at any given moment in time.
+</p><p>The choice between the three expressions of SInc[], and the choice of compromise parameters in BestSInc() are essential for the ultimate efficiency of the algorithm. Those choices and parameters are still in the process of being optimized.
+</p><p>The SInc[] matrix can be computed using three different methods:
+</p>
+<ul><li>in case of lack of data, from a theoretical universal formula, for all new users</li>
+<li>incrementally during learning while collecting repetition data and executing Algorithm SM-17</li>
+<li>wholesale by recomputing stability increase noted in all past <a href="/wiki/Repetition" title="Repetition">repetitions</a> (esp. for users of earlier versions of SuperMemo)</li></ul>
+<p>The recommended approach for users of older SuperMemo is to compute a new SInc[] matrix as the first step and then proceed with incremental changes during a course of standard learning with Algorithm SM-17.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Interval">Interval</h3></div>
+<p><a href="/wiki/Interval" title="Interval">Intervals</a> in Algorithm SM-17 are computed using stability increase function SInc() (the <i>best compromise</i> variant is used as described above as <i>BestSInc</i>).
+</p><p>The following formula is used:
+</p>
+<blockquote>
+<p>Int[n]:=S[n-1]*SInc[D[n-1],S[n-1],R[n]]*ln(1-rFI/100)/ln(0.9)
+</p>
+<div>
+<p>where:
+</p>
+<ul><li>Int[n] - <a href="/wiki/Interval" title="Interval">interval</a> after the n-th <a href="/wiki/Repetition" title="Repetition">repetition</a></li>
+<li>S[n] - <a href="/wiki/Stability" class="mw-redirect" title="Stability">memory stability</a> after n-th repetition</li>
+<li>R[n] - <a href="/wiki/Retrievability" title="Retrievability">memory retrievability</a> at the time of n-th repetition</li>
+<li>SInc[D,S,R] - stability increase for a given level of <a href="/wiki/Difficulty" title="Difficulty">difficulty (D)</a>, <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability (S)</a> and <a href="/wiki/Retrievability" title="Retrievability">retrievability (R)</a></li>
+<li>rFI - <a class="external text" href="https://help.supermemo.org/wiki/Forgetting_index#requested_forgetting_index">requested forgetting index</a> expressed in percent</li></ul>
+</div>
+</blockquote>
+<p>This formula is analogous to similar formulas in all versions of SuperMemo beginning with Algorithm SM-0. The role of the stability increase SInc[] was played earlier by <a href="/wiki/E-Factor" title="E-Factor">E-Factors</a> (based on item difficulty) and <a href="/wiki/O-Factor" class="mw-redirect" title="O-Factor">O-Factors</a> (derived from <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a>).
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Data">Data</h3></div>
+<ul><li><a href="/wiki/Repetition_history" title="Repetition history">item repetition histories</a> (date and grade)</li>
+<li>recall matrix: Recall[D,S,R]</li>
+<li>stability increase matrix: SInc[D,S,R] (i.e. the matrix representation of the stability increase function)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="The_Algorithm:_Outline">The Algorithm: Outline</h3></div>
+<p>The following procedure can be used to determine the status of memory (DSR status) at any moment of time for a given <a href="/wiki/Repetition_history" title="Repetition history">history of repetitions</a>. Once the DSR status is known, we can determine the next <a href="/wiki/Interval" title="Interval">interval</a> using criteria of choice, e.g. <a href="/wiki/Forgetting_index" title="Forgetting index">forgetting index</a>, maximization of <a href="/wiki/Stability" class="mw-redirect" title="Stability">stability</a>, long-term workload minimization, etc.
+</p>
+<ol><li>estimate <a href="/wiki/Difficulty" title="Difficulty">item difficulty D</a> using the <a href="/wiki/Repetition_history" title="Repetition history">history repetitions</a> for that <a href="/wiki/Item" title="Item">item</a></li>
+<li>determine <a href="/wiki/Startup_stability" title="Startup stability">startup stability S0</a> using the <a href="/wiki/Repetition_history" title="Repetition history">history of repetitions</a></li>
+<li>for all repetition history records repeat the steps below</li>
+<li>compute theoretical retrievability Rt using current stability estimate Sw and the interval Int</li>
+<li>update Recall[] matrix using D, Sw[n-1], Rt with the grade-derived recall</li>
+<li>compute recall-based retrievability Rr</li>
+<li>compute grade-derived retrievability Rg</li>
+<li>estimate weighted Rw from Rt, Rr, and Rg</li>
+<li>compute Rw-based stability Sr</li>
+<li>compute SInc-based Se (Se=Sw[n-1]*SInc[D,Sw[n-1],Rw])</li>
+<li>compute interval derived stability Si</li>
+<li>estimate weighted Sw from Sr, Se, and Si</li>
+<li>compute the stability increase SInc on the basis of Sw change</li>
+<li>update Sinc[] matrix using D, Sw, Rw with the new SInc value</li>
+<li>compute new interval using Int:=Sw*SInc[D,Sw,Rw]</li>
+<li>go back computing Rt step</li></ol>
+<p>Note that replacing Int:=Int[n-1]*SInc[D,Sw,Rw] with Int:=Sw*SInc[D,Sw,Rw] frees the user from ever worrying about manual intervention in the length of <a href="/wiki/Interval" title="Interval">intervals</a> (e.g. before an exam, or when encountering knowledge in real life, etc.). This is one of the key advantages of Algorithm SM-17 over all prior versions of the algorithm.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Metrics:_First_year_of_testing">Metrics: First year of testing</h2></div>
+<figure class="mw-halign-center" typeof="mw:File"><a href="/wiki/File:Daily_Algorithm_SM-17_performance_metric.jpg" class="mw-file-description" title="SuperMemo: The ultimate performance metric for Algorithm SM-17 against the old Algorithm SM-15"><img alt="SuperMemo: The ultimate performance metric for Algorithm SM-17 against the old Algorithm SM-15" src="/images/thumb/6/61/Daily_Algorithm_SM-17_performance_metric.jpg/600px-Daily_Algorithm_SM-17_performance_metric.jpg" decoding="async" width="600" height="337" class="mw-file-element" srcset="/images/thumb/6/61/Daily_Algorithm_SM-17_performance_metric.jpg/900px-Daily_Algorithm_SM-17_performance_metric.jpg 1.5x, /images/thumb/6/61/Daily_Algorithm_SM-17_performance_metric.jpg/1200px-Daily_Algorithm_SM-17_performance_metric.jpg 2x" /></a><figcaption>SuperMemo: The ultimate performance metric for Algorithm SM-17 against the old Algorithm SM-15</figcaption></figure>
+<blockquote><p><i><b>Figure:</b> <b><a href="/wiki/R-Metric" title="R-Metric">R-Metric</a></b> graph demonstrates superiority of <a href="/wiki/Algorithm_SM-17" class="mw-redirect" title="Algorithm SM-17">Algorithm SM-17</a> over the old <a href="/wiki/Algorithm_SM-15" title="Algorithm SM-15">Algorithm SM-15</a> for the presented <a href="/wiki/Collection" title="Collection">collection</a> used in the testing period of 12 months before the release of SuperMemo 17. It was plotted using 10,699 data points (i.e. repetition cases with data from both algorithms), and smoothed up to show the trends. One spot beneath the line of 0 at the vertical axis (<code>R-metric&lt;0</code>) corresponds with a  moment in time when the previous version of the algorithm appeared superior (in this case, due to a small sample of repetitions). Some positive and negative trends correspond with changes in the algorithm as data were collected in the new algorithm's testing period. A gradual increase in the metric in the months Feb-May 2016, might be a statistical aberration, or it might be the result of new interval values and a bigger R-metric for <a href="/wiki/Interval" title="Interval">intervals</a> departing from the optimum used in earlier SuperMemos. The latter interpretation might suggest that the benefits of <a href="/wiki/Algorithm_SM-17" class="mw-redirect" title="Algorithm SM-17">Algorithm SM-17</a> can gradually increase over time.</i></p></blockquote>
+<div class="mw-heading mw-heading2"><h2 id="History_of_the_algorithm">History of the algorithm</h2></div>
+<p>Although the presented algorithm may seem complex, you should find it easier to follow its steps once you understand the evolution of individual concepts such as <a href="/wiki/E-Factor" title="E-Factor">E-Factor</a>, <a href="/wiki/Stabilization" title="Stabilization">matrix of optimum intervals</a>, <a href="/wiki/O-Factor" class="mw-redirect" title="O-Factor">optimum factors</a>, <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a>, or <a href="/wiki/Mid-interval_repetition" title="Mid-interval repetition">mid-interval repetition</a>: 
+</p><p>Here is a brief history of <a href="/wiki/SuperMemo_Algorithm" title="SuperMemo Algorithm">SuperMemo Algorithm</a> from the birth of <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a> in 1985: 
+</p>
+<ul><li><b>1985</b> - Paper-and-pencil version of <a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a> was formulated (see: <a href="/wiki/Birth_of_spaced_repetition" class="mw-redirect" title="Birth of spaced repetition">Birth of spaced repetition</a>). <a href="/wiki/Repetition" title="Repetition">Repetitions</a> of whole pages of material proceeded along a fixed table of <a href="/wiki/Interval" title="Interval">intervals</a>. See also: <a href="/wiki/SuperMemo_on_paper" title="SuperMemo on paper">SuperMemo on paper</a></li>
+<li><b>1987</b> - First computer implementation of <a href="/wiki/SuperMemo" title="SuperMemo">SuperMemo</a> makes it possible to divide material into individual <a href="/wiki/Item" title="Item">items</a>. Items are classified into <a href="/wiki/Difficulty" title="Difficulty">difficulty</a> categories by means of <a href="/wiki/E-Factor" title="E-Factor">E-Factors</a>. Each difficulty category has its own optimum spacing of repetitions (see: <a href="/wiki/SuperMemo_1.0_for_DOS_(1987)" title="SuperMemo 1.0 for DOS (1987)">SuperMemo 1.0 for DOS (1987)</a>)</li>
+<li><b>1989</b> - SuperMemo 4 was able to modify the function of optimum intervals depending on the student's performance (<a class="external text" href="http://super-memory.com/english/ol/sm4.htm">Algorithm SM-4</a>). This was then the first algorithm in which the function of optimal intervals was adaptable</li>
+<li><b>1989</b> - SuperMemo 5 replaced the matrix of optimum intervals with the matrix of optimal factors (an optimum factor is the ratio between successive intervals). This approach accelerated the adaptation of the function of optimum intervals (<a class="external text" href="http://super-memory.com/english/ol/sm5.htm">Algorithm SM-5</a>)</li>
+<li><b>1991</b> - <a class="external text" href="http://super-memory.com/articles/soft/sm6.htm">SuperMemo 6</a> derived optimal factors from <a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a> plotted for each entry of the matrix of optimum factors. This could dramatically speed up the convergence of the function of optimum intervals to its ultimate value (<a class="external text" href="http://super-memory.com/english/ol/sm6.htm">Algorithm SM-6</a>). This was then the first adaptable algorithm that would use regression to find the best fit to the actual memory performance data. Unlike SuperMemo 5, which could keep converging and diverging depending on the quality of the learning material and the learning process, SuperMemo 6 would get closer to the student's ultimate memory model with each day of learning</li>
+<li><b>1995</b> - <a class="external text" href="http://super-memory.com/articles/soft/sm8.htm">SuperMemo 8</a> capitalized on data collected by users of <a class="external text" href="http://super-memory.com/articles/soft/sm6.htm">SuperMemo 6</a> and <a class="external text" href="http://super-memory.com/articles/soft/sm7.htm">SuperMemo 7</a> and added a number of improvements that strengthened the theoretical validity of the function of optimum intervals and made it possible to accelerate its adaptation, esp. in the early stages of learning (<a class="external text" href="http://super-memory.com/english/algsm8.htm">Algorithm SM-8</a>). New concepts:
+<ul><li>replacing <a href="/wiki/E-Factor" title="E-Factor">E-Factors</a> with absolute difficulty factors: <a href="#A-Factor">A-Factors</a>. Item difficulty was thus defined in terms of actual properties of human memory, and would not depend on the average difficulty of the learning material</li>
+<li>fast approximation of <a href="/wiki/A-Factor" title="A-Factor">A-Factors</a> from the <b>First Grade vs. A-Factor</b> correlation graph and <a href="#FI-G_graph">Grade vs. Forgetting index graph</a>. This makes it possible to quickly guess item's difficulty before more data is available</li>
+<li>real-time adjustment of the matrix of optimal factors based on the power approximation of the decline of optimum factors</li></ul></li>
+<li><b>2002</b> - SuperMemo 11 (aka SuperMemo 2002) introduced the first SuperMemo algorithm that is resistant to interference from delay or advancement of repetitions: Algorithm SM-11. This makes it possible to safely delay repetitions (<b><a class="external text" href="https://help.supermemo.org/wiki/Postpone">Postpone</a></b>) or advance repetitions (<a href="/wiki/Subset_learning" title="Subset learning"><b>Review</b></a>):
+<ul><li>accounting for <a href="#delayed_repetitions">delayed repetitions</a> by introducing the concept of repetition categories</li>
+<li>accounting for <a href="#advanced_repetitions">advanced repetitions</a> by introducing <a href="/wiki/O-Factor" class="mw-redirect" title="O-Factor">O-Factor</a> decrements derived from the concept of the <i>spacing effect</i></li></ul></li>
+<li><b>2005</b> - SuperMemo 12 (aka SuperMemo 2004) introduced boundaries on A and B parameters computed from the <b>Grade vs. Forgetting Index</b> data. This plugs up a weakness in the algorithm that showed when importing repetitions from other applications (e.g. open source MemAid). If a large number of easy repetitions occurred at unnaturally long intervals (as after pre-training with another application), the graph might show reversed monotonicity that would temporarily affect the estimation of <a href="/wiki/A-Factor" title="A-Factor">A-Factors</a> (the speed of self-correction would be reversely proportional to the amount of flawed data). When boundaries are imposed, self-correction is instant, and the accuracy of <a href="/wiki/A-Factor" title="A-Factor">A-Factor</a> estimation increases with each repetition executed in SuperMemo</li>
+<li><b>2011 </b>- <a href="/wiki/Algorithm_SM-15" title="Algorithm SM-15">Algorithm SM-15</a> in <a href="/wiki/SuperMemo_15" title="SuperMemo 15">SuperMemo 15</a> eliminated two weaknesses of Algorithm SM-11 that would show up in heavily overloaded <a href="/wiki/Collection" title="Collection">collections</a> with very large item delays:
+<ul><li><a href="/wiki/U-Factor" title="U-Factor">U-Factors</a> now allow of correctly interpreting repetition delays of up to 15 years (previously only 60 days)</li>
+<li><a href="/wiki/Forgetting_curve" title="Forgetting curve">forgetting curves</a> are now corrected for repetition delays beyond the maximum registered <a href="/wiki/U-Factor" title="U-Factor">U-Factor</a> value (preventing failed grades in delayed repetitions decreasing the estimates of the <a href="/wiki/Optimum_interval" title="Optimum interval">optimum interval</a> for standardly-scheduled items in the same category)</li></ul></li>
+<li><b>2015</b> - <a href="/wiki/Algorithm_SM-17" class="mw-redirect" title="Algorithm SM-17">Algorithm SM-17</a> is the first algorithm based entirely on the <a href="/wiki/Two_component_model_of_memory" title="Two component model of memory">two component model of memory</a>. It is the largest qualitative change in history of <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a></li>
+<li><b>2019</b> - <a href="/wiki/Algorithm_SM-18" title="Algorithm SM-18">Algorithm SM-18</a> improves the approximation of the <a href="/wiki/Stabilization" title="Stabilization">stabilization</a> function. It also changes the way <a href="/wiki/Item_difficulty" class="mw-redirect" title="Item difficulty">item difficulty</a> is computed</li>
+<li><b>2024</b> - <a class="mw-selflink selflink">Algorithm SM-19</a> is an updated version of the <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a> algorithm introduced in SuperMemo 19. The new algorithm improved the way <a href="/wiki/Post-lapse_stability" title="Post-lapse stability">post-lapse stability</a> is estimated. It also improved the <a href="/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms" title="Universal metric for cross-comparison of spaced repetition algorithms">metrics</a> by taking the best of Algorithm SM-15 and Algorithm SM-17 in handling the <a href="/wiki/First_forgetting_curve" title="First forgetting curve">first forgetting curve</a></li>
+<li><b>2026</b> - <a href="/wiki/Algorithm_SM-20" title="Algorithm SM-20">Algorithm SM-20</a> is the first algorithm based solely on the theoretical model of memory with all parameters computed by means of machine learning</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2></div>
+<ul><li><a class="external text" href="https://www.supermemopedia.com/wiki/Algorithm_SM-17_FAQs">Algorithm SM-17 FAQs</a></li>
+<li><a href="/wiki/Algorithm_SM-15" title="Algorithm SM-15">SuperMemo Algorithm SM-15</a> (predecessor of Algorithm SM-17)</li>
+<li><a href="/wiki/Algorithm_SM-2" title="Algorithm SM-2">Algorithm SM-2</a>: first <a href="/wiki/Spaced_repetition" title="Spaced repetition">spaced repetition</a> algorithm for a computer (1987)</li>
+<li><a href="/wiki/Universal_metric" class="mw-redirect" title="Universal metric">Universal metric</a></li>
+<li><a href="/wiki/First_fast-converging_spaced_repetition_algorithm:_Algorithm_SM-5#Criticism_of_Algorithm_SM-5" title="First fast-converging spaced repetition algorithm: Algorithm SM-5">Anki vs. SuperMemo (official position)</a></li>
+<li><a class="external text" href="https://masterhowtolearn.wordpress.com/2018/11/11/my-comparison-between-anki-and-supermemo/">Anki vs. SuperMemo (independent review)</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Open_letter_to_spaced_repetition_developers">Open letter to spaced repetition developers</a></li>
+<li><a href="/wiki/Search_for_a_universal_memory_formula" title="Search for a universal memory formula">Search for a universal memory formula</a></li>
+<li><a href="/wiki/SuperMemo_Algorithm:_30-year-long_labor" title="SuperMemo Algorithm: 30-year-long labor">SuperMemo Algorithm: 30-year-long labor</a></li>
+<li><a href="/wiki/Recapitulation_of_history_in_SuperMemo_Algorithm_SM-17" title="Recapitulation of history in SuperMemo Algorithm SM-17">Recapitulation of history in SuperMemo Algorithm SM-17</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260815184521
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.084 seconds
+Real time usage: 0.088 seconds
+Preprocessor visited node count: 606/1000000
+Post‐expand include size: 23928/2097152 bytes
+Template argument size: 5664/2097152 bytes
+Highest expansion depth: 6/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 7/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   10.275      1 -total
+ 20.66%    2.123      1 File:Post-lapse-interval-in-Algorithm-SM-19_(SuperMemo).png
+ 15.62%    1.605      1 File:Memory_status.jpg
+ 12.17%    1.250      1 ArticleHistory
+ 10.62%    1.091      6 Template:Fig
+  9.63%    0.990      1 History_of_SuperMemo_algorithm
+  9.59%    0.985      1 File:Stability_increase_function.png
+  8.74%    0.898      1 File:First_forgetting_curve_in_Algorithm_SM-19_(SuperMemo).jpg
+  8.23%    0.846      1 File:Recall.jpg
+  8.17%    0.840      1 File:Daily_Algorithm_SM-17_performance_metric.jpg
+-->
+
+<!-- Saved in parser cache with key guru_kk:pcache:741:|%23|:idhash:canonical and timestamp 20260815184521 and revision id 32781. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://supermemo.guru/index.php?title=Algorithm_SM-19&amp;oldid=32781">https://supermemo.guru/index.php?title=Algorithm_SM-19&amp;oldid=32781</a>"</div></div>
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-login" class="mw-list-item"><a href="/index.php?title=Special:UserLogin&amp;returnto=Algorithm+SM-19" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/wiki/Algorithm_SM-19" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Algorithm_SM-19&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Views</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/wiki/Algorithm_SM-19"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Algorithm_SM-19&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/index.php?title=Algorithm_SM-19&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="More options" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Search</h3>
+	<form action="/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Search supermemo.guru" aria-label="Search supermemo.guru" autocapitalize="sentences" spellcheck="false" title="Search supermemo.guru [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Special:Search">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/wiki/Main_Page"
+			title="Visit the main page"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Navigation</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"><span>Main page</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x"><span>Random page</span></a></li><li id="n-help-mediawiki" class="mw-list-item"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents"><span>Help about MediaWiki</span></a></li><li id="n-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages"><span>Special pages</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/Algorithm_SM-19" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/Algorithm_SM-19" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=Algorithm_SM-19&amp;oldid=32781" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/index.php?title=Algorithm_SM-19&amp;action=info" title="More information about this page"><span>Page information</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 14 March 2026, at 16:39.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="/wiki/SuperMemo_Guru:Privacy_policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/wiki/SuperMemo_Guru:About">About supermemo.guru</a></li>
+	<li id="footer-places-disclaimers"><a href="/wiki/SuperMemo_Guru:General_disclaimer">Disclaimers</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><source media="(min-width: 500px)" srcset="/resources/assets/poweredby_mediawiki.svg" width="88" height="31"><img src="/resources/assets/mediawiki_compact.svg" alt="Powered by MediaWiki" lang="en" width="25" height="25" loading="lazy"></picture></a></li>
+</ul>
+
+</footer>
+
+<div class="mw-portlet mw-portlet-dock-bottom emptyPortlet vector-menu-portal portal" id="p-dock-bottom">
+	<ul>
+		
+	</ul>
+</div>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":138,"wgPageParseReport":{"limitreport":{"cputime":"0.084","walltime":"0.088","ppvisitednodes":{"value":606,"limit":1000000},"postexpandincludesize":{"value":23928,"limit":2097152},"templateargumentsize":{"value":5664,"limit":2097152},"expansiondepth":{"value":6,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":7,"limit":5000000},"timingprofile":["100.00%   10.275      1 -total"," 20.66%    2.123      1 File:Post-lapse-interval-in-Algorithm-SM-19_(SuperMemo).png"," 15.62%    1.605      1 File:Memory_status.jpg"," 12.17%    1.250      1 ArticleHistory"," 10.62%    1.091      6 Template:Fig","  9.63%    0.990      1 History_of_SuperMemo_algorithm","  9.59%    0.985      1 File:Stability_increase_function.png","  8.74%    0.898      1 File:First_forgetting_curve_in_Algorithm_SM-19_(SuperMemo).jpg","  8.23%    0.846      1 File:Recall.jpg","  8.17%    0.840      1 File:Daily_Algorithm_SM-17_performance_metric.jpg"]},"cachereport":{"timestamp":"20260815184521","ttl":86400,"transientcontent":false}}});});</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6403560-9', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"b7d8cc3c9eb34548916724d2a94ff6ce","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
